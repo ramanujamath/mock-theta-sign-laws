@@ -1,0 +1,655 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem*{mainthm}{Main Theorem}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\numberwithin{equation}{section}
+
+\newcommand{\e}{\mathbf{e}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\re}{\operatorname{Re}}
+\newcommand{\im}{\operatorname{Im}}
+\newcommand{\THq}{\mathcal{T}}
+\newcommand{\SL}{\mathrm{SL}_2(\Z)}
+\newcommand{\Ahat}{\widehat{A}}
+\newcommand{\Bhat}{\widehat{B}}
+\newcommand{\fr}[1]{\{#1\}}
+
+\begin{document}
+
+\title[Sign laws for mock theta functions]{Sign laws for the coefficients of second- and eighth-order mock theta functions}
+
+\author{Ramanuja}
+\address{Kachhubi, P.O.\ Tamuria, Lakhnaur Block, Madhubani, Bihar 847410, India}
+\email{\href{mailto:ramanujamath@yahoo.com}{ramanujamath@yahoo.com}}
+
+\subjclass[2020]{11P82, 11F37, 11F27, 11P55}
+\keywords{Mock theta functions, Appell--Lerch sums, circle method, sign patterns, Siegel functions}
+
+\date{November 25, 2026}
+
+\begin{abstract}
+We prove periodic sign laws for the coefficients of five mock theta functions: the eighth-order functions $S_0,S_1,U_0,U_1$ of Gordon and McIntosh and the second-order function $\mu$.
+For $S_0,S_1,\mu,U_1$ the sign of the $n$-th coefficient depends only on $n \bmod 4$, and for $U_0$ only on $n\bmod 8$, apart from an explicit finite list of exceptions.
+We obtain asymptotic formulas with exact constants, for instance
+$c_{S_0}(n)\sim \cos\!\big(\tfrac{9\pi}{16}-\tfrac{\pi n}{2}\big)\cosh\!\big(\tfrac{\pi}{4}\sqrt{n-\tfrac1{16}}\big)\big/\sqrt{n-\tfrac1{16}}$,
+together with a fully explicit error bound from the circle method.
+The bound forces the sign law for $n\ge N_0$ with $N_0\le 11{,}231$, and an exact computation covers the remaining $n$.
+The proof writes each function as Appell--Lerch sums plus a theta quotient, shows that the dominant growth always comes from a pure theta quotient, and bounds every theta factor uniformly on every Farey arc by means of Siegel functions.
+Along the way we prove the identity $U_0+2U_1=J_2^8/(J_1^3J_4^4)$.
+\end{abstract}
+
+\maketitle
+
+%=====================================================================
+\section{Introduction}
+
+The coefficients of several of Ramanujan's mock theta functions show sign patterns of striking regularity.
+The prototype is Ramanujan's claim about the third-order function $f(q)$, whose coefficients alternate in sign; their asymptotics were studied by Dragonette~\cite{Dr} and Andrews~\cite{An}, and an exact formula was proved by Bringmann and Ono~\cite{BO}.
+Recently Dastidar~\cite{Da} proved that the coefficients $r(n)$ of the third-order function $\rho(q)$ satisfy
+$r(3m)>0$, $r(3m+1)\le 0$, $r(3m+2)\le 0$, with equality only for $n\in\{2,4,8,11,20\}$, and he proposed a systematic study of such sign laws for all mock theta functions.
+
+In this paper we carry out that study for the eighth-order functions of Gordon and McIntosh~\cite{GM} and the second-order function $\mu$ of McIntosh~\cite{Mc}.
+For $|q|<1$ we use the $q$-Pochhammer symbol $(x;q)_n=\prod_{j=0}^{n-1}(1-xq^j)$ and define
+\begin{align}
+S_0(q)&=\sum_{n\ge0}\frac{q^{n^2}(-q;q^2)_n}{(-q^2;q^2)_n}, &
+S_1(q)&=\sum_{n\ge0}\frac{q^{n(n+2)}(-q;q^2)_n}{(-q^2;q^2)_n}, \label{eq:S}\\
+U_0(q)&=\sum_{n\ge0}\frac{q^{n^2}(-q;q^2)_n}{(-q^4;q^4)_n}, &
+U_1(q)&=\sum_{n\ge0}\frac{q^{(n+1)^2}(-q;q^2)_n}{(-q^2;q^4)_{n+1}}, \label{eq:U}\\
+\mu(q)&=\sum_{n\ge0}\frac{(-1)^nq^{n^2}(q;q^2)_n}{(-q^2;q^2)_n^2}. \label{eq:mu}
+\end{align}
+For $f\in\{S_0,S_1,\mu,U_0,U_1\}$ write $f(q)=\sum_{n\ge0}c_f(n)q^n$; all $c_f(n)$ are integers.
+
+\begin{mainthm}
+For each $f$ in Table~\ref{tab:main} and every $n\ge0$, the sign of $c_f(n)$ is the one listed for the residue class of $n$, except exactly at the listed values of $n$, where $c_f(n)$ takes the listed value.
+\end{mainthm}
+
+\begin{table}[ht]
+\centering
+\renewcommand{\arraystretch}{1.25}
+\small
+\begin{tabular}{@{}l>{\raggedright\arraybackslash}p{4.9cm}>{\raggedright\arraybackslash}p{5.4cm}@{}}
+\toprule
+$f$ & sign of $c_f(n)$ & exceptions \\
+\midrule
+$S_0$ & $-,+,+,-$ for $n\equiv 0,1,2,3 \pmod 4$ & $c(0)=1$; \ $c(n)=0$ for $n=4,6,8,12,14,20,30$\\
+$S_1$ & $+,-,-,+$ for $n\equiv 0,1,2,3 \pmod 4$ & $c(n)=0$ for $n=1,2,9$\\
+$\mu$ & $-,-,+,+$ for $n\equiv 0,1,2,3 \pmod 4$ & $c(0)=1$\\
+$U_1$ & $+,+,-,-$ for $n\equiv 0,1,2,3 \pmod 4$ & $c(n)=0$ for $n=0,2$\\
+$U_0$ & $-,+,+,-,+,-,-,+$ for $n\equiv 0,\dots,7 \pmod 8$ & $c(0)=1$; \ $c(n)=0$ for $n=3,5,8,12,16,19,24,28,40,60$\\
+\bottomrule
+\end{tabular}
+\caption{The sign laws.}\label{tab:main}
+\end{table}
+
+The Main Theorem follows from asymptotic formulas with exact constants (Theorem~\ref{thm:asym}) combined with an explicit error bound (Theorem~\ref{thm:explicit}).
+For example,
+\begin{equation}\label{eq:intro-asym}
+c_{S_0}(n)=\cos\Big(\frac{9\pi}{16}-\frac{\pi n}{2}\Big)\frac{\cosh\big(\frac{\pi}{4}\sqrt{n-\frac1{16}}\big)}{\sqrt{n-\frac1{16}}}+O\big(n^{3/4}e^{\pi\sqrt n/8}\big).
+\end{equation}
+In every case the trigonometric factor depends only on $n$ modulo $4$ or $8$ and never vanishes (Lemma~\ref{lem:trig}), so the sign law holds as soon as the error is smaller than the main term.
+We make the error bound completely explicit; it suffices for $n\ge N_0$ with $N_0=11231,\,10652,\,976,\,493,\,5180$ for $S_0,S_1,\mu,U_1,U_0$ respectively.
+The finitely many remaining $n$ are checked by exact integer computation.
+
+\subsection*{Method}
+Hickerson and Mortenson~\cite{HM} expressed every classical mock theta function through Appell--Lerch sums $m(x,q,z)$ and theta quotients.
+For our five functions we show that the dominant exponential growth, located at $q=\pm i$ for $S_0,S_1,\mu,U_1$ and at the primitive eighth roots of unity for $U_0$, comes entirely from a pure theta quotient, while the Appell--Lerch part is bounded there.
+The main terms are therefore given by modular transformation of theta functions, with constants that we compute exactly.
+For the error we need upper bounds for the Appell--Lerch parts and two-sided bounds for theta functions on all Farey arcs.
+We obtain both uniformly by writing each theta factor as a Siegel function times the Dedekind eta function and using their transformation laws.
+A new identity, $U_0+2U_1=J_2^8/(J_1^3J_4^4)$ (Proposition~\ref{prop:TH}), reduces the three functions of base $q^4$ to a single eta quotient.
+
+\subsection*{Computations}
+The proof uses two computer calculations, both described in Appendix~\ref{app:code}: the exact integer coefficients for $n<N_0$, and the evaluation of finitely many explicit constants (convergent infinite products) in multiprecision arithmetic with outward rounding.
+The source code is provided as ancillary files and at \url{https://github.com/ramanujamath/mock-theta-sign-laws}.
+
+\subsection*{Notation}
+Throughout, $\e(x)=e^{2\pi i x}$, $J_m=(q^m;q^m)_\infty$, and $\fr{x}=x-\lfloor x\rfloor$ denotes the fractional part.
+For a cusp $h/k$ with $\gcd(h,k)=1$ we write $q=\e(h/k)\,e^{-z}$ with $\re z>0$.
+The second Bernoulli polynomial is $B_2(x)=x^2-x+\frac16$.
+
+%=====================================================================
+\section{Appell--Lerch representations}\label{sec:AL}
+
+The Jacobi theta function is
+\[
+\Theta(x;q)=\sum_{n\in\Z}(-1)^nq^{n(n-1)/2}x^n=(x;q)_\infty(q/x;q)_\infty(q;q)_\infty \qquad (x\neq0,\ |q|<1),
+\]
+the second expression being the Jacobi triple product.
+It satisfies $\Theta(x^{-1};q)=-x^{-1}\Theta(x;q)$.
+Following~\cite{HM}, the Appell--Lerch sum is defined for $x,z\neq0$ with $z\notin q^{\Z}$ and $xz\notin q^{\Z}$ by
+\begin{equation}\label{eq:m}
+m(x,q,z)=\frac{1}{\Theta(z;q)}\sum_{r\in\Z}\frac{(-1)^rq^{r(r-1)/2}z^r}{1-q^{r-1}xz}.
+\end{equation}
+We use three properties from~\cite[Prop.~2.1, Cor.~2.4, Thm.~2.3]{HM}:
+\begin{align}
+m(x,q,z)&=m(x,q,qz), \label{eq:m-shift}\\
+m(x,q,z)&=m(x,q,x^{-1}z^{-1}), \label{eq:m-sym}\\
+m(x,q,z_1)-m(x,q,z_0)&=\frac{z_0J_1^3\,\Theta(z_1/z_0;q)\,\Theta(xz_0z_1;q)}{\Theta(z_0;q)\Theta(z_1;q)\Theta(xz_0;q)\Theta(xz_1;q)}, \label{eq:m-change}
+\end{align}
+where in \eqref{eq:m-change} $J_1=(q;q)_\infty$ is taken with respect to the base $q$ of $m$.
+
+\begin{proposition}[Hickerson--Mortenson {\cite[\S4]{HM}}]\label{prop:HM}
+As formal power series and as analytic functions on $|q|<1$:
+\begin{enumerate}
+\item $\displaystyle S_0(q)=2m(-q^3,q^8,-1)+\frac{q\,\Theta(-q;q^8)\Theta(q^2;q^8)^2}{\Theta(q^3;q^8)^2}$\newline and $S_0(q)=m(-q^3,q^8,-q^2)+m(-q^3,q^8,-q^6)$;
+\item $\displaystyle S_1(q)=-2q^{-1}m(-q,q^8,-1)+\frac{\Theta(-q^3;q^8)\Theta(q^2;q^8)^2}{q\,\Theta(q;q^8)^2}$\newline and $S_1(q)=-q^{-1}m(-q,q^8,-q^2)-q^{-1}m(-q,q^8,-q^6)$;
+\item $U_0(q)=2m(-q,q^4,-1)$ and $U_1(q)=-m(-q,q^4,-q^2)$;
+\item $\mu(q)=2m(-q,q^4,-1)+2m(-q,q^4,q)$.
+\end{enumerate}
+\end{proposition}
+
+For $S_0$ and $S_1$ we call the first expression \emph{form A} and the second \emph{form B}.
+
+\begin{corollary}\label{cor:U}
+$U_0(q)=2m(-q,q^4,q^3)$ and $U_1(q)=-m(-q,q^4,q)$.
+\end{corollary}
+
+\begin{proof}
+Apply \eqref{eq:m-sym} with $x=-q$ and base $q^4$: the parameter $z=-1$ becomes $x^{-1}z^{-1}=q^{-1}$, and $z=-q^2$ becomes $q^{-3}$.
+Then \eqref{eq:m-shift} with base $q^4$ replaces $q^{-1}$ by $q^3$ and $q^{-3}$ by $q$.
+\end{proof}
+
+\begin{proposition}\label{prop:TH}
+Let $\THq(q)=J_2^8/(J_1^3J_4^4)$.
+Then $U_0+2U_1=\THq$.
+Consequently
+\[
+\mu=2U_0-\THq,\qquad U_1=\tfrac12(\THq-U_0),\qquad U_0=\THq-2U_1.
+\]
+\end{proposition}
+
+\begin{proof}
+By Proposition~\ref{prop:HM}(3), $U_0+2U_1=2\big[m(-q,q^4,-1)-m(-q,q^4,-q^2)\big]$.
+Apply \eqref{eq:m-change} with base $Q=q^4$, $x=-q$, $z_1=-1$, $z_0=-q^2$.
+Then $z_1/z_0=q^{-2}$, $xz_0z_1=-q^3$, $xz_0=q^3$ and $xz_1=q$, so
+\[
+U_0+2U_1=-2q^2J_4^3\cdot\frac{\Theta(q^{-2};q^4)}{\Theta(-q^2;q^4)\,\Theta(-1;q^4)}\cdot\frac{\Theta(-q^3;q^4)}{\Theta(q^3;q^4)\,\Theta(q;q^4)}.
+\]
+By the triple product and $\Theta(q^{-2};q^4)=-q^{-2}\Theta(q^2;q^4)$,
+\begin{gather*}
+\Theta(q^2;q^4)=(q^2;q^4)_\infty^2J_4,\qquad \Theta(-q^3;q^4)=(-q;q^2)_\infty J_4,\qquad \Theta(-q^2;q^4)=(-q^2;q^4)_\infty^2J_4,\\
+\Theta(-1;q^4)=2(-q^4;q^4)_\infty^2J_4,\qquad \Theta(q;q^4)=\Theta(q^3;q^4)=(q;q^2)_\infty J_4.
+\end{gather*}
+Substituting, and using $(-q^2;q^4)_\infty(-q^4;q^4)_\infty=(-q^2;q^2)_\infty$,
+\[
+U_0+2U_1=\frac{J_4\,(q^2;q^4)_\infty^2\,(-q;q^2)_\infty}{(-q^2;q^2)_\infty^2\,(q;q^2)_\infty^2}.
+\]
+Finally $(q;q^2)_\infty=J_1/J_2$, $(q^2;q^4)_\infty=J_2/J_4$, $(-q;q^2)_\infty=J_2^2/(J_1J_4)$ and $(-q^2;q^2)_\infty=J_4/J_2$, which give $J_2^8/(J_1^3J_4^4)$.
+For the consequences: by Proposition~\ref{prop:HM}(4) and Corollary~\ref{cor:U}, $\mu=U_0-2U_1$, so $\mu=U_0-(\THq-U_0)=2U_0-\THq$.
+\end{proof}
+
+%=====================================================================
+\section{Theta functions on Farey arcs}\label{sec:theta}
+
+Every theta factor appearing in Section~\ref{sec:AL} has the form $\Theta(s\,q^a;q^M)$ with $M\in\{4,8\}$, $0\le a<M$ and $s=\e(\sigma)$, $\sigma\in\{0,\frac12\}$, or is an eta quotient $J_m$, $m\in\{1,2,4\}$; note $J_m=\Theta(q^m;q^{3m})$.
+Write $q=\e(\tau)$ with $\im\tau>0$.
+
+\begin{definition}
+For $(A,B)\in\Q^2$ the \emph{Siegel function} is
+\[
+g_{(A,B)}(T)=-\mathcal Q^{B_2(A)/2}\,\e\big(B(A-1)/2\big)\,(1-q_z)\prod_{n\ge1}(1-\mathcal Q^nq_z)(1-\mathcal Q^n/q_z),
+\]
+where $\mathcal Q=\e(T)$ and $q_z=\e(AT+B)$,
+and $\eta(T)=\mathcal Q^{1/24}\prod_{n\ge1}(1-\mathcal Q^n)$ is the Dedekind eta function.
+\end{definition}
+
+\begin{lemma}\label{lem:siegel}
+Let $A=a/M$. Then
+\[
+|\Theta(s\,q^a;q^M)|=|q|^{M(-\frac18+\frac A2-\frac{A^2}2)}\;|g_{(A,\sigma)}(M\tau)|\;|\eta(M\tau)|.
+\]
+\end{lemma}
+
+\begin{proof}
+Compare the triple product for $\Theta(sq^a;q^M)$ with the product formulas for $g_{(A,\sigma)}(M\tau)$ and $\eta(M\tau)$.
+The powers of $\mathcal Q=q^M$ differ by $\mathcal Q^{-B_2(A)/2-1/24}$, whose modulus is the stated power of $|q|$.
+\end{proof}
+
+\begin{lemma}[Transformation]\label{lem:transf}
+Let $q=\e(h/k)e^{-z}$, $\re z>0$, and $M\ge1$.
+Put $g=\gcd(M,k)$, $k'=k/g$, $h'=Mh/g$, choose $\gamma=\begin{psmallmatrix}\alpha&\beta\\ k'&-h'\end{psmallmatrix}\in\SL$, and let $T'=\gamma(M\tau)$.
+Then
+\begin{enumerate}
+\item $|\eta(M\tau)|=\big(2\pi g/(Mk|z|)\big)^{1/2}\,|\eta(T')|$;
+\item $|g_{(A,\sigma)}(M\tau)|=|g_{(\Ahat,\Bhat)}(T')|$ with $\Ahat=\fr{-Ah'-\sigma k'}$ and $\Bhat\in\frac1M\Z$;
+\item $\rho:=|\e(T')|=\exp\!\big(-4\pi^2g^2\re(1/z)/(Mk^2)\big)$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+We have $k'M\tau-h'=ik'Mz/(2\pi)$, so (1) is the transformation law of $\eta$ under $\gamma$ (see~\cite[Thm.~3.4]{Ap}), and (3) follows from $\im T'=\im(M\tau)/|k'M\tau-h'|^2$ and $\im(M\tau)=M\re z/(2\pi)$.
+Statement (2) is the transformation law of Siegel functions, $g_{a}\circ\gamma=\varepsilon\, g_{a\gamma}$ with $|\varepsilon|=1$, together with the fact that $|g_a|$ depends only on $a\bmod\Z^2$~\cite[Ch.~2, K1--K2]{KL}.
+Here $(A,\sigma)\gamma^{-1}=(-Ah'-\sigma k',\ \sigma\alpha-A\beta)$, written with respect to the action used in~\cite{KL}.
+\end{proof}
+
+\begin{lemma}[Two-sided bounds]\label{lem:bounds}
+Let $(\Ahat,\Bhat)\in(\frac18\Z)^2\setminus\Z^2$ with $0\le\Ahat<1$, and let $\rho=|\e(T')|<1$.
+Then
+\[
+\rho^{B_2(\Ahat)/2}L(\Ahat,\rho)\le|g_{(\Ahat,\Bhat)}(T')|\le\rho^{B_2(\Ahat)/2}U(\Ahat,\rho),
+\]
+where
+\begin{align*}
+U(\Ahat,\rho)&=u_0\prod_{n\ge1}(1+\rho^{n+\Ahat})(1+\rho^{n-\Ahat}),&u_0&=1+\rho^{\Ahat}\ (\Ahat>0),\ u_0=2\ (\Ahat=0),\\
+L(\Ahat,\rho)&=\ell_0\prod_{n\ge1}(1-\rho^{n+\Ahat})(1-\rho^{n-\Ahat}),&\ell_0&=1-\rho^{\Ahat}\ (\Ahat>0),\ \ell_0=2\sin(\pi/8)\ (\Ahat=0).
+\end{align*}
+Likewise $\rho^{1/24}\prod_{n\ge1}(1-\rho^n)\le|\eta(T')|\le\rho^{1/24}\prod_{n\ge1}(1+\rho^n)$.
+The functions $U$ and $\prod(1+\rho^n)$ increase with $\rho$, and $L$ and $\prod(1-\rho^n)$ decrease.
+\end{lemma}
+
+\begin{proof}
+Since $|q_z|=\rho^{\Ahat}$, the bounds follow from $1-|w|\le|1-w|\le1+|w|$ applied to every factor.
+If $\Ahat=0$ then $\Bhat\in\frac18\Z\setminus\Z$, and $|1-\e(\Bhat)|\ge2\sin(\pi/8)$.
+All exponents $n\pm\Ahat$ are positive because $\Ahat\in\frac18\Z\cap[0,1)$.
+\end{proof}
+
+\begin{definition}[Growth exponent]\label{def:E}
+Consider a product $P=\prod_j\Theta_j^{p_j}$ ($p_j\in\Z$) of factors $\Theta_j=\Theta(s_jq^{a_j};q^{M_j})$ or $\Theta_j=J_{m_j}$.
+On the Farey arc of $h/k$ define
+\[
+E_P(h/k)=-\frac{256}{k^2}\sum_j p_j\,\frac{g_j^2}{M_j}\Big(\frac{B_2(\Ahat_j)}2+\frac1{24}\Big),
+\]
+where $g_j,\Ahat_j$ are as in Lemma~\ref{lem:transf} for the $j$-th factor; for $\Theta_j=J_m$ take $M_j=m$ and replace $B_2(\Ahat_j)/2+1/24$ by $1/24$.
+\end{definition}
+
+By Lemmas~\ref{lem:siegel}--\ref{lem:bounds}, $|P|$ equals
+\[
+\exp\Big(\frac{\pi^2}{64}E_P(h/k)\,\re(1/z)\Big)
+\]
+times explicit factors that are bounded above and below by products of the form $U$, $L$, $\prod(1\pm\rho^n)$ and powers of $k|z|$ and $|q|$.
+The number $k^2E_P(h/k)$ depends only on $(k\bmod 2M,\ h\bmod M)$ with $M=\operatorname{lcm}(M_j)$, because $g_j$ depends on $k\bmod M_j$, while $\Ahat_j$ depends on $h'\bmod M_j$ and $k'\bmod2$.
+Hence $E_P$ takes finitely many values times $k^{-2}$, and its maximum over all cusps is attained at small $k$.
+
+\begin{proposition}[Exponents]\label{prop:exponents}
+Use the following representations on the arc of $h/k$:
+\begin{itemize}
+\item for $S_0$ and $S_1$: form A if $k'=k/\gcd(8,k)$ is odd, form B if $k'$ is even;
+\item for $\mu$: $\mu=-\THq+2U_0$, with $U_0$ written by Proposition~\ref{prop:HM}(3) or Corollary~\ref{cor:U};
+\item for $U_1$: $U_1=\frac12\THq-\frac12U_0$ (same choices for $U_0$), or one of the two single-$m$ forms of $U_1$;
+\item for $U_0$: one of the two single-$m$ forms of $U_0$, or $U_0=\THq-2U_1$ (single-$m$ forms for $U_1$).
+\end{itemize}
+In each case take the choice with the smallest maximal exponent.
+For an Appell--Lerch term $c\,m(x,q^M,z)$ the relevant product is $\Theta(z;q^M)^{-1}$.
+Then the largest exponent of any term is as in Table~\ref{tab:exp}.
+\end{proposition}
+
+\begin{table}[ht]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+$f$ & dominant cusps $\zeta$ & exponent at $\zeta$ & largest exponent at all other cusps, $\varepsilon_f$\\
+\midrule
+$S_0,S_1$ & $\pm i$ & $1$ & $1/4$\\
+$\mu$ & $\pm i$ & $2$ & $1/2$\\
+$U_1$ & $\pm i$ & $2$ & $2/9$\\
+$U_0$ & $\e(h/8)$, $h$ odd & $1/2$ & $1/8$\\
+\bottomrule
+\end{tabular}
+\caption{Growth exponents, in units of $\pi^2\re(1/z)/64$.}\label{tab:exp}
+\end{table}
+
+\begin{proof}
+This is a finite computation over the classes $(k\bmod 2M,h\bmod M)$, carried out in exact rational arithmetic (Appendix~\ref{app:code}).
+For each class we take the smallest admissible $k$ other than the dominant one.
+For instance, for $S_0$ with $k'$ odd and $h'\equiv2,6\pmod 8$ the theta quotient has $k'^2E=1$; this is the dominant cusp when $k'=1$ (that is $k=4$), and otherwise $k'\ge3$ gives $E\le1/9$.
+At the dominant cusps the Appell--Lerch terms used have exponent $0$.
+\end{proof}
+
+%=====================================================================
+\section{Main terms}\label{sec:main}
+
+Let $P_f$ denote the theta quotient that carries the main term:
+\[
+P_{S_0}=\frac{q\,\Theta(-q;q^8)\Theta(q^2;q^8)^2}{\Theta(q^3;q^8)^2},\qquad
+P_{S_1}=\frac{\Theta(-q^3;q^8)\Theta(q^2;q^8)^2}{q\,\Theta(q;q^8)^2},\qquad
+P_\mu=P_{U_1}=P_{U_0}=\THq.
+\]
+Correspondingly $f=\kappa_fP_f+(\text{Appell--Lerch terms})$, with $\kappa_f=1$ for $S_0,S_1,U_0$, $\kappa_\mu=-1$ and $\kappa_{U_1}=\frac12$; for $U_0$ the second summand is $-2U_1$.
+
+\begin{lemma}[Poisson expansion]\label{lem:poisson}
+Let $h/k$ be a cusp, $t>0$, $q=\e(h/k)e^{-t}$, and $b=a-M/2$.
+Then
+\[
+\Theta(sq^a;q^M)=\frac1{2k}\sqrt{\frac{2\pi}{Mt}}\,e^{tb^2/(2M)}\sum_{\nu\in\Z}G_\nu\,\e\Big(\frac{\nu b}{2kM}\Big)\exp\Big(-\frac{\pi^2\nu^2}{2k^2Mt}\Big),
+\]
+where $G_\nu=\sum_{j=0}^{2k-1}(-s)^j\,\e\big(h(Mj(j-1)/2+aj)/k+\nu j/(2k)\big)$.
+\end{lemma}
+
+\begin{proof}
+Split the sum defining $\Theta$ by $n\equiv j\pmod{2k}$.
+The factor $(-s)^n\e(h(Mn(n-1)/2+an)/k)$ depends only on $j$.
+Apply Poisson summation to the Gaussian $y\mapsto e^{-t(My^2/2+by)}$ along $y\in j+2k\Z$.
+\end{proof}
+
+\begin{proposition}\label{prop:main}
+Let $\zeta$ be a dominant cusp of $f$ and $q=\zeta e^{-z}$, $\re z>0$.
+Then
+\[
+P_f(\zeta e^{-z})=C_\zeta\,z^{-1/2}\,e^{\delta_f z}\,e^{a_f/z}\,F(z),
+\]
+with $C_\zeta,a_f,\delta_f$ as in Table~\ref{tab:const}.
+Here $|F(z)-1|\le e^{\Lambda}-1$.
+To define $\Lambda$, write $P_f$, via Lemmas~\ref{lem:siegel} and~\ref{lem:transf}, as a product of factors $(1-u)^{\pm1}$ coming from the products in Lemma~\ref{lem:bounds}, each with $|u|=\rho_j^{e}$ for some $e>0$.
+Then $\Lambda$ is the sum of $-\log(1-|u|)$ over all these factors, counted with multiplicity.
+Explicitly, $\Lambda=\sum_j|p_j|\lambda(\Ahat_j,\rho_j)+\sum_i|r_i|\lambda_\eta(\rho_i)$, where $\lambda(\Ahat,\rho)=-\log(1-\rho^{\Ahat})-\sum_{n\ge1}\big(\log(1-\rho^{n+\Ahat})+\log(1-\rho^{n-\Ahat})\big)$ (the first term omitted if $\Ahat=0$) and $\lambda_\eta(\rho)=-\sum_{n\ge1}\log(1-\rho^n)$.
+The first sum runs over the theta factors and the second over the distinct eta arguments $T'$ with total multiplicity $r_i$.
+The values at the conjugate cusps are the complex conjugates.
+\end{proposition}
+
+\begin{table}[ht]
+\centering
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}lllll@{}}
+\toprule
+$P$ & $\zeta$ & $C_\zeta$ & $a$ & $\delta$\\
+\midrule
+$q\,\Theta(-q;q^8)\Theta(q^2;q^8)^2/\Theta(q^3;q^8)^2$ & $i$ & $\frac{\sqrt\pi}2e^{9\pi i/16}$ & $\pi^2/64$ & $-1/16$\\
+$q^{-1}\Theta(-q^3;q^8)\Theta(q^2;q^8)^2/\Theta(q;q^8)^2$ & $i$ & $\frac{\sqrt\pi}2e^{-3\pi i/16}$ & $\pi^2/64$ & $7/16$\\
+$\THq$ & $i$ & $\sqrt{\pi/2}\,e^{3\pi i/8}$ & $\pi^2/32$ & $-1/8$\\
+$\THq$ & $\e(1/8)$ & $\frac{\sqrt\pi}2e^{5\pi i/16}$ & $\pi^2/128$ & $-1/8$\\
+$\THq$ & $\e(3/8)$ & $\frac{\sqrt\pi}2e^{-13\pi i/16}$ & $\pi^2/128$ & $-1/8$\\
+\bottomrule
+\end{tabular}
+\caption{Constants of the main terms.}\label{tab:const}
+\end{table}
+
+\begin{proof}
+Apply Lemma~\ref{lem:siegel} and Lemma~\ref{lem:transf} (without absolute values, i.e.\ with the multipliers) to every factor.
+The product of the leading powers $\e(T')^{B_2(\Ahat)/2}$ and $\e(T')^{1/24}$ gives $e^{a/z}$.
+The powers of $q$ from Lemma~\ref{lem:siegel}, together with the explicit $q^{\pm1}$, give $e^{\delta z}$.
+The factors $(k'M\tau-h')^{-1/2}$ give $z^{-1/2}$ and the modulus $|C_\zeta|$.
+What remains is $F(z)=\prod_j\prod(1-u)^{\pm p_j}$, a product over the factors of Lemma~\ref{lem:bounds} with $|u|$ equal to powers $\rho_j^{e}$, $e>0$.
+Expanding $|F-1|$ termwise gives the bound.
+
+The phase of $C_\zeta$ is obtained from Lemma~\ref{lem:poisson}.
+As $t\to0^+$ the sum is dominated by the frequencies $\pm\nu^*$ of smallest modulus with nonzero coefficient.
+The argument of $C_\zeta$ is therefore $\sum_jp_j\arg\big(\sum_{\nu=\pm\nu^*_j}G_\nu\,\e(\nu b_j/(2kM_j))\big)$ plus the argument of the explicit power of $\zeta$.
+Each inner sum is a finite sum of roots of unity, which we evaluate exactly; the results are the stated rational multiples of $\pi$.
+For $S_1$, for instance, $\zeta^{-1}=-i$ contributes $-\pi/2$, $\Theta(-q^3;q^8)$ contributes $-\pi/16$ and $\Theta(q;q^8)^{-2}$ contributes $+3\pi/8$, for a total of $-3\pi/16$.
+\end{proof}
+
+At the dominant cusps the Appell--Lerch parts are bounded.
+For $S_0$ and $S_1$, form A at $q=\pm i$ has $\Theta(-1;q^8)$ with exponent $0$, and every Lerch denominator $1-q^{8r-5}$, resp.\ $1-q^{8r-7}$, equals $1\pm i\cdot(\text{real})$ in modulus at least~$1$.
+For $\mu$ and $U_1$, the form $U_0=2m(-q,q^4,-1)$ has exponent $0$ at $\pm i$.
+For $U_0$, the single-$m$ forms of $U_1$ have exponent $0$ at the eighth roots of unity.
+
+\begin{lemma}\label{lem:bessel}
+For $a,N,t_0>0$,
+\[
+\frac1{2\pi i}\int_{t_0-i\infty}^{t_0+i\infty}z^{-1/2}e^{Nz+a/z}\,dz=\frac{\cosh(2\sqrt{aN})}{\sqrt{\pi N}}.
+\]
+\end{lemma}
+
+\begin{proof}
+This is the inverse Laplace transform $\mathcal L^{-1}[s^{-1/2}e^{a/s}](N)=(N/a)^{-1/4}I_{-1/2}(2\sqrt{aN})$, combined with $I_{-1/2}(x)=\sqrt{2/(\pi x)}\cosh x$.
+\end{proof}
+
+\begin{definition}[Main terms]
+With $N=n+\delta_f$ define
+\begin{align*}
+M_{S_0}(n)&=\cos\Big(\frac{9\pi}{16}-\frac{\pi n}2\Big)\frac{\cosh(\frac\pi4\sqrt N)}{\sqrt N}, \\
+M_{S_1}(n)&=\cos\Big(\frac{3\pi}{16}+\frac{\pi n}2\Big)\frac{\cosh(\frac\pi4\sqrt N)}{\sqrt N},\\
+M_{\mu}(n)&=\sqrt2\cos\Big(\frac{5\pi}8+\frac{\pi n}2\Big)\frac{\cosh(\frac{\pi}{2\sqrt2}\sqrt N)}{\sqrt N}, \\
+M_{U_1}(n)&=\frac1{\sqrt2}\cos\Big(\frac{3\pi}8-\frac{\pi n}2\Big)\frac{\cosh(\frac{\pi}{2\sqrt2}\sqrt N)}{\sqrt N},\\
+M_{U_0}(n)&=\Big[\cos\Big(\frac{5\pi}{16}-\frac{\pi n}4\Big)+\cos\Big(\frac{13\pi}{16}+\frac{3\pi n}4\Big)\Big]\frac{\cosh(\frac{\pi}{4\sqrt2}\sqrt N)}{\sqrt N}.
+\end{align*}
+\end{definition}
+
+Each $M_f(n)$ is $\sum_\zeta\zeta^{-n}C_\zeta\cosh(2\sqrt{a_fN})/\sqrt{\pi N}$, summed over the dominant cusps (Lemma~\ref{lem:bessel}), multiplied by $\kappa_f$.
+
+\begin{lemma}\label{lem:trig}
+Let $\theta_f(n)$ denote the trigonometric factor of $M_f(n)$, including its constant.
+Then $|\theta_f(n)|\ge L_f$ for all $n$, where $L_{S_0}=\cos\frac{7\pi}{16}$, $L_{S_1}=\cos\frac{5\pi}{16}$, $L_\mu=\sqrt2\cos\frac{3\pi}8$, $L_{U_1}=\frac1{\sqrt2}\cos\frac{3\pi}8$, and $L_{U_0}=\min_{0\le r<8}|\theta_{U_0}(r)|>0.2758$.
+Moreover $\operatorname{sign}\theta_f(n)$ is the sign listed in Table~\ref{tab:main} for $n$.
+\end{lemma}
+
+\begin{proof}
+$\theta_f(n)$ depends only on $n\bmod 4$ (resp.\ $8$); evaluate the finitely many values.
+\end{proof}
+
+\begin{theorem}\label{thm:asym}
+For each $f$, $c_f(n)=M_f(n)+O\big(n^{3/4}\exp(\tfrac\pi4\sqrt{\varepsilon_f n})\big)$, with $\varepsilon_f$ from Table~\ref{tab:exp}.
+\end{theorem}
+
+This follows from Theorem~\ref{thm:explicit} and Lemma~\ref{lem:large}.
+
+%=====================================================================
+\section{The explicit circle method}\label{sec:circle}
+
+Fix $f$ and $n\ge1$.
+Put $t_0=\frac\pi8\sqrt{\varepsilon_f/n}$ and $K=\lfloor\sqrt{2\pi/t_0}\rfloor$.
+By Cauchy's formula with $q=e^{-w}$,
+\[
+c_f(n)=\frac1{2\pi i}\int_{t_0-\pi i}^{t_0+\pi i}f(e^{-w})\,e^{nw}\,dw.
+\]
+Dissect the segment by the Farey fractions $h/k$ of order $K$.
+The arc of $h/k$ consists of the $w=z-2\pi ih/k$ with $z=t_0-i\varphi$ and $-\vartheta_1\le\varphi\le\vartheta_2$, where $\vartheta_{1,2}=2\pi/(k(k+k_{1,2}))$ and $k_1,k_2$ are the denominators of the neighbouring fractions.
+
+\begin{lemma}[Geometry]\label{lem:geom}
+On every arc, $t_0\le k|z|<\sqrt{4\pi t_0}$ and $\re(1/z)/k^2>1/(4\pi)$.
+Consequently every $\rho$ in Lemma~\ref{lem:transf} satisfies $\rho\le\exp(-\pi g^2/M)$.
+On the arc of a cusp of order $k$ we have $\re(1/z)\ge1/(t_0+2\pi/k^2)$, and the arc extends at least $Y_k=2\pi/\big(k(\sqrt{2\pi/t_0}+k)\big)$ on both sides.
+\end{lemma}
+
+\begin{proof}
+Since $k_i\le K$ and $k+k_i\ge K+1$, we have $2\pi/(k(k+K))\le\vartheta_i\le2\pi/(k(K+1))$.
+Then $k^2|z|^2=k^2t_0^2+k^2\varphi^2\le K^2t_0^2+(2\pi/(K+1))^2<2\pi t_0+2\pi t_0$, and $\re(1/z)=t_0/|z|^2$.
+\end{proof}
+
+\begin{lemma}[Lerch numerators]\label{lem:lerch}
+Let $Q=q^M$ with $|q|=e^{-t_0}$, and let
+\[
+N(x,z)=\sum_{r\in\Z}\frac{(-1)^rQ^{r(r-1)/2}z^r}{1-Q^{r-1}xz}
+\]
+be the sum in \eqref{eq:m}.
+For the representations of Proposition~\ref{prop:exponents},
+\[
+|N(x,z)|\le e^{c\,t_0}\,\frac{1+\sqrt{\pi/(\kappa t_0)}}{1-e^{-d\,t_0}},
+\]
+with $\kappa=4$ for $M=8$, $\kappa=2$ for $M=4$, and $(c,d)$ given below; here $d$ is the least $|e|$ among the denominators $1\pm q^{e}$.
+\[
+\renewcommand{\arraystretch}{1.15}
+\begin{array}{@{}lllcc@{}}
+\toprule
+f & \text{form} & \text{denominators} & d & c\\ \midrule
+S_0 & m(-q^3,q^8,-1) & 1-q^{8r-5} & 3 & 1\\
+S_0 & m(-q^3,q^8,-q^2) & 1-q^{8r-3} & 3 & \tfrac14\\
+S_0 & m(-q^3,q^8,-q^6) & 1-q^{8r+1} & 1 & \tfrac14\\
+S_1 & m(-q,q^8,-1) & 1-q^{8r-7} & 1 & 1\\
+S_1 & m(-q,q^8,-q^2) & 1-q^{8r-5} & 3 & \tfrac14\\
+S_1 & m(-q,q^8,-q^6) & 1-q^{8r-1} & 1 & \tfrac14\\
+U_0 & m(-q,q^4,-1) & 1-q^{4r-3} & 1 & \tfrac12\\
+U_0 & m(-q,q^4,q^3) & 1+q^{4r} & 4 & \tfrac18\\
+U_1 & m(-q,q^4,-q^2) & 1-q^{4r-1} & 1 & 0\\
+U_1 & m(-q,q^4,q) & 1+q^{4r-2} & 2 & \tfrac18\\ \bottomrule
+\end{array}
+\]
+\end{lemma}
+
+\begin{proof}
+For either sign of $e\neq0$, $|1\pm q^e|\ge1-e^{-|e|t_0}$; for $U_0$ with $z=q^3$ the single term $r=0$ has denominator exactly $2$.
+The numerators satisfy $|Q^{r(r-1)/2}z^r|=e^{-\kappa t_0(r-r_0)^2+ct_0}$ after completing the square, and $\sum_{r\in\Z}e^{-\kappa t_0(r-r_0)^2}\le1+\sqrt{\pi/(\kappa t_0)}$.
+\end{proof}
+
+\begin{lemma}[Tails]\label{lem:tail}
+For $a,N>0$, $t_0>0$ and $Y>0$,
+\[
+\Big|\frac1{2\pi i}\int_{t_0+iY}^{t_0+i\infty}z^{-1/2}e^{Nz+a/z}\,dz\Big|\le\frac{e^{Nt_0}}{2\pi N}\,e^{at_0/Y^2}\Big(2Y^{-1/2}+\frac{2a}3Y^{-3/2}\Big),
+\]
+and the same bound holds for the integral from $t_0-i\infty$ to $t_0-iY$.
+\end{lemma}
+
+\begin{proof}
+Integrate by parts once, using $|e^{Nz}|=e^{Nt_0}$, $|e^{a/z}|\le e^{at_0/Y^2}$ for $|\im z|\ge Y$, and $|\frac{d}{dz}(z^{-1/2}e^{a/z})|\le(\frac12|z|^{-3/2}+a|z|^{-5/2})e^{at_0/Y^2}$.
+\end{proof}
+
+\begin{theorem}[Explicit error bound]\label{thm:explicit}
+For every $f$ and $n\ge1$, $|c_f(n)-M_f(n)|\le B_f(n)$, where
+\[
+B_f(n)=e^{nt_0}\Big[C_f(t_0)\,e^{\pi^2\varepsilon_f/(64t_0)}+D_f(t_0)\Big]+T_f(n),
+\]
+and $C_f,D_f,T_f$ are as follows.
+\begin{enumerate}
+\item $C_f(t_0)$ is the maximum over the cusp classes of the sum, over the terms of the chosen representation, of the product of:
+the bound of Lemma~\ref{lem:lerch} (for Appell--Lerch terms);
+the factor $\prod_j(2\pi g_j/M_j)^{p_j/2}(k|z|)^{-\sum p_j/2}$ from Lemma~\ref{lem:transf}(1), with $k|z|$ replaced by $t_0$ or $\sqrt{4\pi t_0}$ according to the sign of the exponent;
+the $|q|$-powers of Lemma~\ref{lem:siegel} and the explicit powers $q^{\pm1}$ of the representation (only factors larger than $1$ are kept);
+and the products $U^{p_j}$ ($p_j>0$) or $L^{p_j}$ ($p_j<0$) of Lemma~\ref{lem:bounds} at $\rho_j=\exp(-\pi g_j^2/M_j)$.
+\item $D_f(t_0)$ bounds the integrand minus the main term on the dominant arcs. With $X=1/(t_0+2\pi/k^2)$ it is
+\[
+|\kappa_f|\,|C_\zeta|\,t_0^{-1/2}e^{\max(\delta_f,0)t_0}\,e^{a_fX}\big(e^{\Lambda}-1\big),
+\]
+with $\Lambda$ evaluated at $\re(1/z)=X$, plus the bound of item~(1) for the Appell--Lerch terms, evaluated with $\re(1/z)\ge X$.
+\item $T_f(n)$ is twice the number of dominant cusps, times $|\kappa_f|\,|C_\zeta|$, times the bound of Lemma~\ref{lem:tail} with $a=a_f$, $N=n+\delta_f$ and $Y=Y_k$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The Farey arcs partition the segment of integration, which has length $2\pi$, so a pointwise bound for the integrand on each arc bounds the integral.
+On a non-dominant arc, the chosen representation and Lemmas~\ref{lem:siegel}--\ref{lem:bounds}, \ref{lem:geom} and \ref{lem:lerch} bound $|f|$ by $C_f(t_0)\exp(\frac{\pi^2}{64}E\,\re(1/z))$.
+Here $E\le\varepsilon_f$ by Proposition~\ref{prop:exponents}, and $\re(1/z)\le1/t_0$; also $|e^{nw}|=e^{nt_0}$.
+On a dominant arc we write $f=\pm(\text{main term})+(P_f-\text{main term})+(\text{Appell--Lerch terms})$ and use Proposition~\ref{prop:main}.
+The main term integrated over the arc equals the full vertical integral of Lemma~\ref{lem:bessel} minus two tails, which Lemma~\ref{lem:tail} bounds with $Y=Y_k$ (Lemma~\ref{lem:geom}).
+Summing the full integrals over the dominant cusps gives $M_f(n)$.
+\end{proof}
+
+Since $nt_0+\pi^2\varepsilon_f/(64t_0)=\frac\pi4\sqrt{\varepsilon_fn}$, the bound grows like $\exp(\frac\pi4\sqrt{\varepsilon_fn})$ times a power of $n$.
+The main term grows like $\exp(2\sqrt{a_fn})=\exp(\frac\pi4\sqrt{\alpha_fn})$, where $\alpha_f=64a_f/\pi^2$ is the dominant exponent of Table~\ref{tab:exp} and $\alpha_f>\varepsilon_f$.
+
+%=====================================================================
+\section{Proof of the Main Theorem}\label{sec:proof}
+
+\subsection{Certified evaluation}
+The constants in $B_f(n)$ are explicit convergent products of the form $U$, $L$, $\prod(1\pm\rho^n)$, and the sums $\Lambda$, at finitely many values of $\rho$.
+We evaluate the products in $50$-digit decimal arithmetic with explicit truncation bounds ($\log(1+x)\le x$, and $-\log(1-x)\le2x$ for $0\le x\le\frac12$).
+We round outward, and replace each $\rho$ by an upper bound on a grid of mesh $10^{-7}$; this is conservative because $U$ increases and $L$ decreases in $\rho$.
+The remaining elementary operations are performed in IEEE double precision, with relative error below $10^{-14}$.
+We therefore require a logarithmic margin of at least $10^{-8}$.
+
+\begin{proposition}\label{prop:cert}
+For each $f$ and every integer $n$ with $N_0(f)\le n\le 2\cdot10^5$,
+\[
+\log\Big(L_f\,\frac{\cosh(2\sqrt{a_fN})}{\sqrt N}\Big)-\log B_f(n)>10^{-8},\qquad N=n+\delta_f,
+\]
+where $N_0(f)$ is given in Table~\ref{tab:N0}.
+Moreover this margin is increasing in $n$ on $[N_0(f),2\cdot10^5]$.
+\end{proposition}
+
+\begin{table}[ht]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}lrcc@{}}
+\toprule
+$f$ & $N_0(f)$ & margin at $N_0$ & margin at $2\cdot10^5$\\
+\midrule
+$S_0$ & $11231$ & $1.0\cdot10^{-4}$ & $131.8$\\
+$S_1$ & $10652$ & $4.3\cdot10^{-4}$ & $132.9$\\
+$\mu$ & $976$ & $7.3\cdot10^{-4}$ & $225.1$\\
+$U_1$ & $493$ & $1.0\cdot10^{-2}$ & $308.1$\\
+$U_0$ & $5180$ & $1.7\cdot10^{-3}$ & $100.1$\\
+\bottomrule
+\end{tabular}
+\caption{Certified thresholds and logarithmic margins.}\label{tab:N0}
+\end{table}
+
+\begin{lemma}\label{lem:large}
+The inequality of Proposition~\ref{prop:cert} holds for all $n\ge2\cdot10^5$.
+\end{lemma}
+
+\begin{proof}
+Write $t=t_0(n)$, a decreasing function of $n$ proportional to $n^{-1/2}$, and $n^*=2\cdot10^5$, $t^*=t_0(n^*)$.
+Every factor $\phi(t)$ occurring in $C_f$, $D_f$ and $T_f$ satisfies: $t^{\gamma}\phi(t)$ is nondecreasing on $(0,t^*]$ for some $\gamma\le\frac32$.
+The factors are of three kinds:
+\begin{itemize}
+\item $t^{-1/2}$, $(\sqrt{4\pi t})^{1/2}$, $e^{ct}$, $1+\sqrt{\pi/(\kappa t)}$ (note $t^{1/2}(1+\sqrt{\pi/(\kappa t)})=t^{1/2}+\sqrt{\pi/\kappa}$), and $(1-e^{-dt})^{-1}$ (note $t/(1-e^{-dt})$ is increasing);
+\item the major-arc factor $e^{a_fX}(e^{\Lambda}-1)$, which is nondecreasing in $\rho$ and hence in $t$, being a series in powers of $\rho$ whose exponents all exceed that of $e^{a_fX}$;
+\item the tail factor, which is polynomial in $Y_k\asymp t^{1/2}$.
+\end{itemize}
+Hence $B_f(n)\le B_f(n^*)\,(n/n^*)^{3/4}\exp\big(\frac\pi4\sqrt{\varepsilon_f}(\sqrt n-\sqrt{n^*})\big)$ for $n\ge n^*$.
+The logarithm of the main-term lower bound has derivative at least $\frac{\pi\sqrt{\alpha_f}}{8\sqrt N}-\frac1{2N}$, while the logarithm of this upper bound has derivative at most $\frac{\pi\sqrt{\varepsilon_f}}{8\sqrt n}+\frac3{4n}$.
+Since $\alpha_f>\varepsilon_f$, the margin is increasing once $\sqrt n>10/(\pi(\sqrt{\alpha_f}-\sqrt{\varepsilon_f}))$, which holds for $n\ge n^*$.
+At $n^*$ the margin is positive by Proposition~\ref{prop:cert}.
+\end{proof}
+
+\begin{proof}[Proof of the Main Theorem]
+Let $n\ge N_0(f)$.
+By Theorem~\ref{thm:explicit}, Proposition~\ref{prop:cert} and Lemma~\ref{lem:large},
+$|c_f(n)-M_f(n)|\le B_f(n)<L_f\cosh(2\sqrt{a_fN})/\sqrt N\le|M_f(n)|$.
+So $c_f(n)$ is nonzero and has the sign of $M_f(n)$, which by Lemma~\ref{lem:trig} is the sign in Table~\ref{tab:main}.
+For $0\le n<N_0(f)$ we computed $c_f(n)$ exactly from the defining series \eqref{eq:S}--\eqref{eq:mu} in integer arithmetic; the signs and the exceptions are as in Table~\ref{tab:main}.
+\end{proof}
+
+\begin{remark}
+The bounds on the dominant arcs are computed at one cusp of each conjugate pair.
+This suffices because $q\mapsto\bar q$ maps the arc of $h/k$ onto that of $(k-h)/k$ and preserves all moduli.
+\end{remark}
+
+%=====================================================================
+\section{Further remarks}\label{sec:remarks}
+
+\subsection*{Third-order functions}
+Dastidar~\cite{Da} conjectured sign laws for the third-order functions $\phi(q)=\sum q^{n^2}/(-q^2;q^2)_n$ and $\chi(q)=\sum q^{n^2}(-q;q)_n/(-q^3;q^3)_n$.
+Computing their coefficients for $n\le1500$, we find that $\phi$ has signs $+,+,-,-$ for $n\equiv0,1,2,3\pmod4$, with zeros only at $n=2,8,10,26$.
+We also find that $\chi$ has signs $+,+,+,-,-,-$ for $n\equiv0,\dots,5\pmod 6$, with zeros exactly at $n=3,4,5,8,9,11,16,17,18,20,21,23,27,32,35,41,44,47,68,71,80$.
+The method of this paper should apply to both.
+
+\subsection*{Period and dominant cusps}
+In all cases considered here, and in Dastidar's theorem for $\rho(q)$, the period of the sign law equals the order of the dominant roots of unity.
+These roots form a single Galois orbit at which a pure theta quotient dominates and the Appell--Lerch part is bounded.
+It would be interesting to determine which classical mock theta functions have this property, and so to classify their periodic sign laws.
+
+%=====================================================================
+\appendix
+\sloppy
+\section{Computations}\label{app:code}
+
+The programs needed for the proof (Python~3, standard library only) accompany this paper as ancillary files and are available at \url{https://github.com/ramanujamath/mock-theta-sign-laws}, in the directory \href{https://github.com/ramanujamath/mock-theta-sign-laws/tree/main/code}{\texttt{code}}.
+\begin{itemize}
+\item \href{https://github.com/ramanujamath/mock-theta-sign-laws/blob/main/code/coeffs.py}{\texttt{coeffs.py}}: exact integer coefficients of $S_0,S_1,\mu,U_0,U_1$ from \eqref{eq:S}--\eqref{eq:mu} for $n\le12000$, and the check of Table~\ref{tab:main} in that range (used in the proof of the Main Theorem for $n<N_0$).
+\item \href{https://github.com/ramanujamath/mock-theta-sign-laws/blob/main/code/exponents_S.py}{\texttt{exponents\_S.py}}: the exponent classes for $S_0,S_1$ (Proposition~\ref{prop:exponents}).
+\item \href{https://github.com/ramanujamath/mock-theta-sign-laws/blob/main/code/exact_phase.py}{\texttt{exact\_phase.py}}: the exact phases of $C_\zeta$ (Proposition~\ref{prop:main}).
+\item \href{https://github.com/ramanujamath/mock-theta-sign-laws/blob/main/code/farey_lib.py}{\texttt{farey\_lib.py}}, \href{https://github.com/ramanujamath/mock-theta-sign-laws/blob/main/code/farey_bound.py}{\texttt{farey\_bound.py}}, \href{https://github.com/ramanujamath/mock-theta-sign-laws/blob/main/code/farey_N0.py}{\texttt{farey\_N0.py}}, \href{https://github.com/ramanujamath/mock-theta-sign-laws/blob/main/code/farey_S1_N0.py}{\texttt{farey\_S1\_N0.py}}, \href{https://github.com/ramanujamath/mock-theta-sign-laws/blob/main/code/farey_gen.py}{\texttt{farey\_gen.py}}: the bound $B_f(n)$ of Theorem~\ref{thm:explicit}. The last also computes the exponent classes for $\mu,U_1,U_0$.
+\item \href{https://github.com/ramanujamath/mock-theta-sign-laws/blob/main/code/certify.py}{\texttt{certify.py}}: outward-rounded multiprecision evaluation of the products of Lemma~\ref{lem:bounds}.
+\item \href{https://github.com/ramanujamath/mock-theta-sign-laws/blob/main/code/certify_run.py}{\texttt{certify\_run.py}}: the verification of Proposition~\ref{prop:cert} and the sparse values used in Lemma~\ref{lem:large}.
+\end{itemize}
+The total running time is a few minutes on a laptop.
+
+%=====================================================================
+\begin{thebibliography}{99}
+
+\bibitem{An} G.~E. Andrews, \emph{On the theorems of Watson and Dragonette for Ramanujan's mock theta functions}, Amer.\ J. Math.\ \textbf{88} (1966), 454--490.
+
+\bibitem{Ap} T.~M. Apostol, \emph{Modular Functions and Dirichlet Series in Number Theory}, 2nd ed., Graduate Texts in Mathematics~41, Springer, New York, 1990.
+
+\bibitem{BO} K.~Bringmann and K.~Ono, \emph{The $f(q)$ mock theta function conjecture and partition ranks}, Invent.\ Math.\ \textbf{165} (2006), 243--266.
+
+\bibitem{Da} M.~G. Dastidar, \emph{Sign laws and mock theta functions}, arXiv:2606.31606 (2026).
+
+\bibitem{Dr} L.~A. Dragonette, \emph{Some asymptotic formulae for the mock theta series of Ramanujan}, Trans.\ Amer.\ Math.\ Soc.\ \textbf{72} (1952), 474--500.
+
+\bibitem{GM} B.~Gordon and R.~J. McIntosh, \emph{Some eighth order mock theta functions}, J. London Math.\ Soc.\ (2) \textbf{62} (2000), 321--335.
+
+\bibitem{HM} D.~Hickerson and E.~Mortenson, \emph{Hecke-type double sums, Appell--Lerch sums, and mock theta functions, I}, Proc.\ London Math.\ Soc.\ (3) \textbf{109} (2014), 382--422; arXiv:1208.1421.
+
+\bibitem{KL} D.~S. Kubert and S.~Lang, \emph{Modular Units}, Grundlehren der Mathematischen Wissenschaften~244, Springer, New York, 1981.
+
+\bibitem{Mc} R.~J. McIntosh, \emph{Second order mock theta functions}, Canad.\ Math.\ Bull.\ \textbf{50} (2007), 284--290.
+
+\end{thebibliography}
+
+\end{document}
