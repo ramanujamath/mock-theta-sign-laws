@@ -1,0 +1,3 @@
+first [1, 0, 0, 1, 1, -1, -1, 1, 2, 0, -2, 1] [1, 0, 0, 1, 1, -1, -1, 1, 2, 0, -2, 1]
+S1 rep matches through q^2999: True
+mu2 rep matches through q^2999: True

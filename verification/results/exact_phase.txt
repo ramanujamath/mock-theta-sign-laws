@@ -1,0 +1,5 @@
+S0-TQ at 1/4: exponent 1.000000 (units pi^2/64t); phase/pi = 0.562500000000 ~ 9/16  (residual 0.0e+00)
+S1-TQ at 1/4: exponent 1.000000 (units pi^2/64t); phase/pi = -0.187500000000 ~ -3/16  (residual 1.1e-16)
+TH at 1/4: exponent 2.000000 (units pi^2/64t); phase/pi = 0.375000000000 ~ 3/8  (residual 4.4e-16)
+TH at 1/8: exponent 0.500000 (units pi^2/64t); phase/pi = 0.312500000000 ~ 5/16  (residual 4.4e-16)
+TH at 3/8: exponent 0.500000 (units pi^2/64t); phase/pi = -0.812500000000 ~ -13/16  (residual 4.4e-16)

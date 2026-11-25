@@ -1,0 +1,6 @@
+U0 + 2U1 == TH  through q^20000: True
+mu2 == 2U0 - TH through q^20000: True
+
+real	3m13.929s
+user	3m12.304s
+sys	0m0.030s

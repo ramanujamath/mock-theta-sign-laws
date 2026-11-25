@@ -1,0 +1,1 @@
+max |log(direct/transformed)| = 1.0517814472930193e-07

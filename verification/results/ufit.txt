@@ -1,0 +1,4 @@
+U0 predicted pattern: -++-+--+  min |trig| = 0.27589937928294306
+U1 predicted pattern: ++--
+U0 best shift delta = -4/32, max rel err at n~20000 = 3.45e-15
+U1 best shift delta = -4/32, max rel err at n~20000 = 1.54e-16

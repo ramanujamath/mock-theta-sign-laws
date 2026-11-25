@@ -41,6 +41,10 @@ python3 coeffs.py        # ALL OK
 python3 certify_run.py   # S0: N0 = 11231, S1: 10652, mu: 976, U1: 493, U0: 5180  (a few minutes)
 ```
 
+## Verification
+
+The folder [`verification/`](verification) contains independent checks and exploratory computations that are not part of the proof. They include direct and high-precision validation of every bound, an independent recomputation of the cusp exponents, the referee report, and the searches that led to the results. Its [README](verification/README.md) gives usage and the results of each script, and [`verification/results/`](verification/results) holds the outputs of a full run.
+
 ## Contact
 
 Ramanuja, Kachhubi, P.O. Tamuria, Lakhnaur Block, Madhubani, Bihar 847410, India. ramanujamath@yahoo.com

@@ -1,0 +1,8 @@
+V1 new factors: 6000 checks, 24 violations, worst slack -2.10e+01
+V5 z=(0.05+0j): |TQ/main-1|=4.30e-11  |TQ-main|=3.809e-09 <= bound 5.109e-09: True
+V5 z=(0.05-0.1j): |TQ/main-1|=1.60e-02  |TQ-main|=8.031e-02 <= bound 1.659e-01: True
+V5 z=(0.03+0.05j): |TQ/main-1|=4.19e-05  |TQ-main|=6.071e-04 <= bound 1.136e-03: True
+V5 z=(0.08-0.2j): |TQ/main-1|=3.20e-01  |TQ-main|=8.250e-01 <= bound 2.362e+00: True
+V7 n=10652: log|actual error|=35.1  log B(n)=75.1
+V7 n=20000: log|actual error|=49.8  log B(n)=90.3
+V7 n=60000: log|actual error|=89.9  log B(n)=131.2

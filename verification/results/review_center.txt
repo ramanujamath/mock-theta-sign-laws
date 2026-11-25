@@ -1,0 +1,106 @@
+U0 r=0 main coef -0.2759
+U0 r=1 main coef 1.1759
+U0 r=2 main coef 1.3870
+U0 r=3 main coef -0.7857
+U0 r=4 main coef 0.2759
+U0 r=5 main coef -1.1759
+U0 r=6 main coef -1.3870
+U0 r=7 main coef 0.7857
+U0 LOWER 0.27589937928294306
+S0 n=11231: log|c-M|=   36.00 logB=   76.24 log(LOWER main)=   76.24 log|M|=   77.86  True True True sign True
+S0 n=11232: log|c-M|=   33.94 logB=   76.24 log(LOWER main)=   76.25 log|M|=   76.25  True True True sign True
+S0 n=11897: log|c-M|=   36.99 logB=   77.47 log(LOWER main)=   78.65 log|M|=   80.26  True True True sign True
+S0 n=21827: log|c-M|=   52.07 logB=   92.81 log(LOWER main)=  108.71 log|M|=  110.33  True True True sign True
+S0 n=23922: log|c-M|=   55.00 logB=   95.55 log(LOWER main)=  114.11 log|M|=  114.11  True True True sign True
+S0 n=28941: log|c-M|=   60.52 logB=  101.67 log(LOWER main)=  126.15 log|M|=  127.76  True True True sign True
+S0 n=30802: log|c-M|=   63.05 logB=  103.80 log(LOWER main)=  130.35 log|M|=  130.35  True True True sign True
+S0 n=35375: log|c-M|=   67.67 logB=  108.77 log(LOWER main)=  140.16 log|M|=  141.77  True True True sign True
+S0 n=38534: log|c-M|=   71.11 logB=  112.02 log(LOWER main)=  146.57 log|M|=  146.57  True True True sign True
+S0 n=39819: log|c-M|=   72.12 logB=  113.30 log(LOWER main)=  149.10 log|M|=  150.72  True True True sign True
+S0 n=48324: log|c-M|=   77.92 logB=  121.32 log(LOWER main)=  164.93 log|M|=  164.93  True True True sign True
+S0 n=59248: log|c-M|=   87.08 logB=  130.63 log(LOWER main)=  183.35 log|M|=  183.35  True True True sign True
+S0 n=60000: log|c-M|=   87.67 logB=  131.24 log(LOWER main)=  184.55 log|M|=  184.55  True True True sign True
+S0 max(log|c-M|-logB)=-40.24  min margin=0.00011
+S1 n=10652: log|c-M|=   35.08 logB=   75.14 log(LOWER main)=   75.14 log|M|=   75.55  True True True sign True
+S1 n=10653: log|c-M|=   35.16 logB=   75.15 log(LOWER main)=   75.15 log|M|=   75.15  True True True sign True
+S1 n=18795: log|c-M|=   46.99 logB=   88.59 log(LOWER main)=  101.47 log|M|=  101.47  True True True sign True
+S1 n=22077: log|c-M|=   52.61 logB=   93.14 log(LOWER main)=  110.42 log|M|=  110.42  True True True sign True
+S1 n=22894: log|c-M|=   52.95 logB=   94.22 log(LOWER main)=  112.54 log|M|=  112.94  True True True sign True
+S1 n=27762: log|c-M|=   58.87 logB=  100.28 log(LOWER main)=  124.47 log|M|=  124.87  True True True sign True
+S1 n=35101: log|c-M|=   67.60 logB=  108.48 log(LOWER main)=  140.63 log|M|=  140.63  True True True sign True
+S1 n=39024: log|c-M|=   71.47 logB=  112.51 log(LOWER main)=  148.59 log|M|=  148.99  True True True sign True
+S1 n=46907: log|c-M|=   77.74 logB=  120.03 log(LOWER main)=  163.44 log|M|=  163.44  True True True sign True
+S1 n=47488: log|c-M|=   79.37 logB=  120.56 log(LOWER main)=  164.49 log|M|=  164.89  True True True sign True
+S1 n=50744: log|c-M|=   82.23 logB=  123.46 log(LOWER main)=  170.22 log|M|=  170.63  True True True sign True
+S1 n=51757: log|c-M|=   83.18 logB=  124.35 log(LOWER main)=  171.97 log|M|=  171.97  True True True sign True
+S1 n=60000: log|c-M|=   89.87 logB=  131.24 log(LOWER main)=  185.60 log|M|=  186.00  True True True sign True
+S1 max(log|c-M|-logB)=-39.99  min margin=0.00044
+mu2 n=976: log|c-M|=   11.93 logB=   29.95 log(LOWER main)=   29.95 log|M|=   29.95  True True True sign True
+mu2 n=977: log|c-M|=   13.38 logB=   29.96 log(LOWER main)=   29.97 log|M|=   30.85  True True True sign True
+mu2 n=6959: log|c-M|=   40.97 logB=   60.10 log(LOWER main)=   86.93 log|M|=   87.81  True True True sign True
+mu2 n=11892: log|c-M|=   53.89 logB=   74.66 log(LOWER main)=  115.13 log|M|=  115.13  True True True sign True
+mu2 n=24234: log|c-M|=   81.04 logB=  100.98 log(LOWER main)=  166.55 log|M|=  166.55  True True True sign True
+mu2 n=27984: log|c-M|=   85.80 logB=  107.52 log(LOWER main)=  179.38 log|M|=  179.38  True True True sign True
+mu2 n=34001: log|c-M|=   96.66 logB=  117.14 log(LOWER main)=  198.29 log|M|=  199.17  True True True sign True
+mu2 n=35778: log|c-M|=   99.44 logB=  119.81 log(LOWER main)=  203.54 log|M|=  203.54  True True True sign True
+mu2 n=39317: log|c-M|=  104.30 logB=  124.95 log(LOWER main)=  213.64 log|M|=  214.52  True True True sign True
+mu2 n=49005: log|c-M|=  117.01 logB=  137.90 log(LOWER main)=  239.17 log|M|=  240.06  True True True sign True
+mu2 n=49170: log|c-M|=  117.38 logB=  138.11 log(LOWER main)=  239.59 log|M|=  239.59  True True True sign True
+mu2 n=49351: log|c-M|=  117.04 logB=  138.34 log(LOWER main)=  240.04 log|M|=  240.92  True True True sign True
+mu2 n=60000: log|c-M|=  128.55 logB=  151.12 log(LOWER main)=  265.26 log|M|=  265.26  True True True sign True
+mu2 max(log|c-M|-logB)=-16.57  min margin=0.00074
+U0 n=5180: log|c-M|=   15.36 logB=   33.71 log(LOWER main)=   33.71 log|M|=   33.71  True True True sign True
+U0 n=5181: log|c-M|=   14.61 logB=   33.71 log(LOWER main)=   33.72 log|M|=   35.17  True True True sign True
+U0 n=5565: log|c-M|=   15.31 logB=   34.48 log(LOWER main)=   35.14 log|M|=   36.59  True True True sign True
+U0 n=6455: log|c-M|=   16.34 logB=   36.17 log(LOWER main)=   38.25 log|M|=   39.30  True True True sign True
+U0 n=7607: log|c-M|=   18.17 logB=   38.18 log(LOWER main)=   41.99 log|M|=   43.03  True True True sign True
+U0 n=8292: log|c-M|=   20.42 logB=   39.30 log(LOWER main)=   44.08 log|M|=   44.08  True True True sign True
+U0 n=8550: log|c-M|=   20.54 logB=   39.71 log(LOWER main)=   44.84 log|M|=   46.46  True True True sign True
+U0 n=10456: log|c-M|=   21.10 logB=   42.55 log(LOWER main)=   50.18 log|M|=   50.18  True True True sign True
+U0 n=10776: log|c-M|=   21.51 logB=   43.00 log(LOWER main)=   51.03 log|M|=   51.03  True True True sign True
+U0 n=12697: log|c-M|=   26.09 logB=   45.57 log(LOWER main)=   55.87 log|M|=   57.32  True True True sign True
+U0 n=16959: log|c-M|=   29.71 logB=   50.62 log(LOWER main)=   65.47 log|M|=   66.52  True True True sign True
+U0 n=18894: log|c-M|=   32.64 logB=   52.69 log(LOWER main)=   69.43 log|M|=   71.05  True True True sign True
+U0 n=20000: log|c-M|=   31.65 logB=   53.83 log(LOWER main)=   71.61 log|M|=   71.61  True True True sign True
+U0 max(log|c-M|-logB)=-18.35  min margin=0.00166
+U1 n=493: log|c-M|=   -2.33 logB=   19.55 log(LOWER main)=   19.56 log|M|=   20.44  True True True sign True
+U1 n=494: log|c-M|=    3.95 logB=   19.56 log(LOWER main)=   19.58 log|M|=   19.58  True True True sign True
+U1 n=606: log|c-M|=    4.79 logB=   20.56 log(LOWER main)=   22.14 log|M|=   22.14  True True True sign True
+U1 n=711: log|c-M|=    4.57 logB=   21.41 log(LOWER main)=   24.33 log|M|=   25.21  True True True sign True
+U1 n=1373: log|c-M|=    8.11 logB=   25.64 log(LOWER main)=   35.54 log|M|=   36.42  True True True sign True
+U1 n=5860: log|c-M|=   11.06 logB=   41.13 log(LOWER main)=   78.69 log|M|=   78.69  True True True sign True
+U1 n=6354: log|c-M|=   24.02 logB=   42.35 log(LOWER main)=   82.16 log|M|=   82.16  True True True sign True
+U1 n=9883: log|c-M|=    9.25 logB=   49.91 log(LOWER main)=  103.82 log|M|=  104.70  True True True sign True
+U1 n=11618: log|c-M|=   34.11 logB=   53.11 log(LOWER main)=  113.04 log|M|=  113.04  True True True sign True
+U1 n=14107: log|c-M|=   19.61 logB=   57.30 log(LOWER main)=  125.15 log|M|=  126.03  True True True sign True
+U1 n=17227: log|c-M|=   22.28 logB=   62.04 log(LOWER main)=  138.91 log|M|=  139.79  True True True sign True
+U1 n=19502: log|c-M|=   45.65 logB=   65.22 log(LOWER main)=  148.17 log|M|=  148.17  True True True sign True
+U1 n=20000: log|c-M|=   46.29 logB=   65.89 log(LOWER main)=  150.13 log|M|=  150.13  True True True sign True
+U1 max(log|c-M|-logB)=-15.61  min margin=0.01030
+S0 n=3000 phi=-0.0030 |main|=1.259e+12 |f-main|=1.3958e+00 log(|f-main|/sup)=-6.15
+S0 n=3000 phi=-0.0010 |main|=3.132e+18 |f-main|=1.4000e+00 log(|f-main|/sup)=-6.15
+S0 n=3000 phi=-0.0003 |main|=5.273e+19 |f-main|=1.4014e+00 log(|f-main|/sup)=-6.15
+S0 n=3000 phi=+0.0000 |main|=7.124e+19 |f-main|=1.4020e+00 log(|f-main|/sup)=-6.15
+S0 n=3000 phi=+0.0002 |main|=6.229e+19 |f-main|=1.4024e+00 log(|f-main|/sup)=-6.15
+S0 n=3000 phi=+0.0008 |main|=9.144e+18 |f-main|=1.4035e+00 log(|f-main|/sup)=-6.15
+S0 n=3000 phi=+0.0015 |main|=1.126e+17 |f-main|=1.4049e+00 log(|f-main|/sup)=-6.15
+S0 n=3000 phi=+0.0030 |main|=1.259e+12 |f-main|=1.4077e+00 log(|f-main|/sup)=-6.14
+S0 3000 worst -6.143456769162333
+S1 n=3000 phi=-0.0030 |main|=1.262e+12 |f-main|=1.4037e+00 log(|f-main|/sup)=-7.24
+S1 n=3000 phi=-0.0010 |main|=3.137e+18 |f-main|=1.4026e+00 log(|f-main|/sup)=-7.24
+S1 n=3000 phi=-0.0003 |main|=5.282e+19 |f-main|=1.4022e+00 log(|f-main|/sup)=-7.24
+S1 n=3000 phi=+0.0000 |main|=7.136e+19 |f-main|=1.4020e+00 log(|f-main|/sup)=-7.24
+S1 n=3000 phi=+0.0002 |main|=6.240e+19 |f-main|=1.4019e+00 log(|f-main|/sup)=-7.24
+S1 n=3000 phi=+0.0008 |main|=9.161e+18 |f-main|=1.4015e+00 log(|f-main|/sup)=-7.24
+S1 n=3000 phi=+0.0015 |main|=1.128e+17 |f-main|=1.4009e+00 log(|f-main|/sup)=-7.24
+S1 n=3000 phi=+0.0030 |main|=1.262e+12 |f-main|=1.3998e+00 log(|f-main|/sup)=-7.24
+S1 3000 worst -7.241443076942125
+S0 n=1500 phi=-0.0030 |main|=7.026e+10 |f-main|=1.3911e+00 log(|f-main|/sup)=-5.74
+S0 n=1500 phi=-0.0010 |main|=6.405e+13 |f-main|=1.3952e+00 log(|f-main|/sup)=-5.74
+S0 n=1500 phi=-0.0003 |main|=1.815e+14 |f-main|=1.3965e+00 log(|f-main|/sup)=-5.74
+S0 n=1500 phi=+0.0000 |main|=2.020e+14 |f-main|=1.3971e+00 log(|f-main|/sup)=-5.74
+S0 n=1500 phi=+0.0002 |main|=1.926e+14 |f-main|=1.3975e+00 log(|f-main|/sup)=-5.74
+S0 n=1500 phi=+0.0008 |main|=9.590e+13 |f-main|=1.3987e+00 log(|f-main|/sup)=-5.73
+S0 n=1500 phi=+0.0015 |main|=1.710e+13 |f-main|=1.4000e+00 log(|f-main|/sup)=-5.73
+S0 n=1500 phi=+0.0030 |main|=7.026e+10 |f-main|=1.4027e+00 log(|f-main|/sup)=-5.73
+S0 1500 worst -5.73192254582616

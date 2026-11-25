@@ -1,0 +1,1 @@
+theta factors via triple product: 36000 checks, 0 violations, worst slack -8.10e-12

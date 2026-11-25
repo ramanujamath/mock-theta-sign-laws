@@ -1,0 +1,4 @@
+max nu_eff over k<=400 (bound 6M): {'Theta(-1q^1;q^8)': (6, 48), 'Theta(-1q^2;q^8)': (4, 48), 'Theta(+1q^3;q^8)': (6, 48), 'Theta(-1q^3;q^8)': (6, 48), 'Theta(+1q^2;q^6)': (2, 36), 'Theta(+1q^1;q^3)': (1, 18), 'Theta(-1q^0;q^4)': (4, 24), 'Theta(-1q^6;q^8)': (4, 48), 'Theta(+1q^3;q^4)': (2, 24), 'Theta(+1q^4;q^12)': (4, 72), 'Theta(+1q^1;q^4)': (2, 24), 'Theta(+1q^1;q^8)': (6, 48), 'Theta(+1q^2;q^8)': (4, 48), 'Theta(-1q^0;q^8)': (8, 48)}
+S0 max exponent over cusps k<=400, k!=4: 0.2500 at 3/8
+S1 max exponent over cusps k<=400, k!=4: 0.2500 at 1/8
+mu2 max exponent over cusps k<=400, k!=4: 0.5000 at 1/8

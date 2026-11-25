@@ -1,0 +1,32 @@
+== V1: |Theta| lower/upper bounds at random points of Farey arcs (direct summation) ==
+  3000 checks, violations: 0;  min log(actual/lower) = -2.95e-07, min log(upper/actual) = -6.40e-10
+  median slack: lower 0.77, upper 0.57 (natural log)
+== V2: geometry: min Re(1/z)/k'^2 over Farey arcs vs 1/(4pi) ==
+  n=100: t0=0.01963 K=17  min Re(1/z)/k^2 = 0.08417  >= 1/(4pi) = 0.07958: True
+  n=1000: t0=0.00621 K=31  min Re(1/z)/k^2 = 0.08213  >= 1/(4pi) = 0.07958: True
+  n=10000: t0=0.00196 K=56  min Re(1/z)/k^2 = 0.08100  >= 1/(4pi) = 0.07958: True
+  n=60000: t0=0.00080 K=88  min Re(1/z)/k^2 = 0.08048  >= 1/(4pi) = 0.07958: True
+== V3: S0 on the circle vs assembled sup bound (minor arcs) ==
+  n=400: t0=0.0098: max|S0| sampled on minor arcs = 4.514e+02 at (5, 8);  bound = 2.405e+16  (log ratio 31.6)
+  n=1000: t0=0.0062: max|S0| sampled on minor arcs = 5.588e+03 at (5, 8);  bound = 2.963e+17  (log ratio 31.6)
+  n=2000: t0=0.0044: max|S0| sampled on minor arcs = 8.704e+04 at (5, 8);  bound = 4.613e+18  (log ratio 31.6)
+== V4: Bessel identity (1/2pi i) int z^{-1/2} e^{Nz+a/z} dz = cosh(pi sqrt N/4)/sqrt(pi N) ==
+  N=50.0: numeric 1.02994938e+01 (imag 7.8e-14),  formula 1.02994969e+01
+  N=200.0: numeric 1.32947117e+03 (imag 1.1e-10),  formula 1.32947119e+03
+== V5: major arc: TQ(i e^{-z}) vs C0 z^{-1/2} e^{-z/16} e^{pi^2/(64z)}, and |TQ-Main| bound ==
+  z=(0.05-0j): |TQ/main - 1| = 4.302e-11;  |TQ-main| = 3.714e-09 <= bound 4.983e-09
+  z=(0.03-0.02j): |TQ/main - 1| = 9.707e-13;  |TQ-main| = 1.588e-10 <= bound 2.121e-10
+  z=(0.02+0.05j): |TQ/main - 1| = 4.512e-04;  |TQ-main| = 4.985e-03 <= bound 6.693e-03
+  z=(0.01-0.1j): |TQ/main - 1| = 4.564e-01;  |TQ-main| = 1.485e+00 <= bound 1.143e+01
+== V6: Lerch numerator bounds ==
+  t0=0.05: sampled max |N_A|,|N_B1|,|N_B2| = 4.694e+00,4.961e+00,1.944e+01;  bounds 3.746e+01,3.608e+01,1.030e+02
+  t0=0.01: sampled max |N_A|,|N_B1|,|N_B2| = 1.544e+01,1.399e+01,1.906e+01;  bounds 3.371e+02,3.345e+02,9.936e+02
+  t0=0.003: sampled max |N_A|,|N_B1|,|N_B2| = 4.077e+01,3.866e+01,7.890e+01;  bounds 1.923e+03,1.919e+03,5.740e+03
+== V7: actual |c(n)-M(n)| vs rigorous bound (log scale) ==
+  n=100: log|E(n)| actual =    -2.609   rigorous bound    37.373   log(0.195|main|)     3.222
+  n=1000: log|E(n)| actual =     6.066   rigorous bound    46.439   log(0.195|main|)    19.054
+  n=5000: log|E(n)| actual =    20.493   rigorous bound    62.192   log(0.195|main|)    48.950
+  n=11231: log|E(n)| actual =    36.003   rigorous bound    76.243   log(0.195|main|)    76.243
+  n=20000: log|E(n)| actual =    47.568   rigorous bound    90.306   log(0.195|main|)   103.793
+  n=40000: log|E(n)| actual =    70.226   rigorous bound   113.483   log(0.195|main|)   149.454
+  n=60000: log|E(n)| actual =    87.674   rigorous bound   131.236   log(0.195|main|)   184.554

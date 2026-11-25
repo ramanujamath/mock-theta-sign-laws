@@ -1,0 +1,14 @@
+K 41 arc 0.24444444444444444 0.2558139534883721 phi range -0.03490658503988664 0.0365301471347651  log major sup 7.580581236504232
+phi=-0.03491 |f|=7.308e+00 |main|=7.424e+00 |f-main|=1.213e+00 log ratio to sup=-7.39  rho=0.000
+phi=-0.02895 |f|=8.834e+00 |main|=9.949e+00 |f-main|=1.356e+00 log ratio to sup=-7.28  rho=0.000
+phi=-0.02300 |f|=1.510e+01 |main|=1.614e+01 |f-main|=1.406e+00 log ratio to sup=-7.24  rho=0.000
+phi=-0.01705 |f|=4.291e+01 |main|=4.158e+01 |f-main|=1.405e+00 log ratio to sup=-7.24  rho=0.000
+phi=-0.01109 |f|=4.786e+02 |main|=4.798e+02 |f-main|=1.406e+00 log ratio to sup=-7.24  rho=0.000
+phi=-0.00514 |f|=1.450e+07 |main|=1.450e+07 |f-main|=1.405e+00 log ratio to sup=-7.24  rho=0.000
+phi=+0.00081 |f|=8.645e+18 |main|=8.645e+18 |f-main|=6.109e+06 log ratio to sup=+8.04  rho=0.000
+phi=+0.00676 |f|=1.266e+05 |main|=1.266e+05 |f-main|=1.396e+00 log ratio to sup=-7.25  rho=0.000
+phi=+0.01272 |f|=1.820e+02 |main|=1.832e+02 |f-main|=1.389e+00 log ratio to sup=-7.25  rho=0.000
+phi=+0.01867 |f|=3.085e+01 |main|=2.971e+01 |f-main|=1.381e+00 log ratio to sup=-7.26  rho=0.000
+phi=+0.02462 |f|=1.272e+01 |main|=1.374e+01 |f-main|=1.381e+00 log ratio to sup=-7.26  rho=0.000
+phi=+0.03058 |f|=7.896e+00 |main|=9.065e+00 |f-main|=1.381e+00 log ratio to sup=-7.26  rho=0.000
+phi=+0.03653 |f|=6.829e+00 |main|=6.983e+00 |f-main|=1.562e+00 log ratio to sup=-7.13  rho=0.000

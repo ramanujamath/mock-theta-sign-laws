@@ -1,0 +1,21 @@
+== S0  predicted error growth exponent 0.3927
+  n=2000: log|E|/sqrt(n)=0.2403   |E|/|main|=1.19e-08
+  n=5000: log|E|/sqrt(n)=0.2898   |E|/|main|=4.38e-13
+  n=10000: log|E|/sqrt(n)=0.3165   |E|/|main|=4.43e-18
+  n=20000: log|E|/sqrt(n)=0.3364   |E|/|main|=3.82e-25
+  n=40000: log|E|/sqrt(n)=0.3511   |E|/|main|=3.91e-35
+  n=59999: log|E|/sqrt(n)=0.3664   |E|/|main|=1.32e-42
+== S1  predicted error growth exponent 0.3927
+  n=2000: log|E|/sqrt(n)=0.2894   |E|/|main|=2.49e-08
+  n=5000: log|E|/sqrt(n)=0.3209   |E|/|main|=9.24e-13
+  n=10000: log|E|/sqrt(n)=0.3385   |E|/|main|=9.34e-18
+  n=20000: log|E|/sqrt(n)=0.3519   |E|/|main|=8.06e-25
+  n=40000: log|E|/sqrt(n)=0.3621   |E|/|main|=8.24e-35
+  n=59999: log|E|/sqrt(n)=0.3624   |E|/|main|=8.77e-43
+== mu2  predicted error growth exponent 0.5554
+  n=2000: log|E|/sqrt(n)=0.4260   |E|/|main|=8.33e-12
+  n=5000: log|E|/sqrt(n)=0.4671   |E|/|main|=4.50e-18
+  n=10000: log|E|/sqrt(n)=0.4895   |E|/|main|=3.88e-25
+  n=20000: log|E|/sqrt(n)=0.5063   |E|/|main|=3.96e-35
+  n=40000: log|E|/sqrt(n)=0.5190   |E|/|main|=2.95e-49
+  n=59999: log|E|/sqrt(n)=0.5291   |E|/|main|=5.02e-60

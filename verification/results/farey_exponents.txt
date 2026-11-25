@@ -1,0 +1,15 @@
+k' odd   h'=0 mod 8:  R_TQ=     0  R_ALA=    0  R_formB=    0
+k' odd   h'=1 mod 8:  R_TQ=  -7/4  R_ALA=    0  R_formB=    1
+k' odd   h'=2 mod 8:  R_TQ=     1  R_ALA=    0  R_formB=    4
+k' odd   h'=3 mod 8:  R_TQ=   1/4  R_ALA=    0  R_formB=    1
+k' odd   h'=4 mod 8:  R_TQ=   -12  R_ALA=    0  R_formB=    0
+k' odd   h'=5 mod 8:  R_TQ=   1/4  R_ALA=    0  R_formB=    1
+k' odd   h'=6 mod 8:  R_TQ=     1  R_ALA=    0  R_formB=    4
+k' odd   h'=7 mod 8:  R_TQ=  -7/4  R_ALA=    0  R_formB=    1
+k' even  h'=1 mod 8:  R_TQ= -15/4  R_ALA=    4  R_formB=    1
+k' even  h'=3 mod 8:  R_TQ=   9/4  R_ALA=    4  R_formB=    1
+k' even  h'=5 mod 8:  R_TQ=   9/4  R_ALA=    4  R_formB=    1
+k' even  h'=7 mod 8:  R_TQ= -15/4  R_ALA=    4  R_formB=    1
+
+max over k<=2000, k!=4 of min(formA,formB) exponent: 1/4 at (15, 16)
+k=4: (Fraction(1, 1), Fraction(1, 1), Fraction(4, 1)) (Fraction(1, 1), Fraction(1, 1), Fraction(4, 1))

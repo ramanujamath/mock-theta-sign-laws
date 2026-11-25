@@ -1,0 +1,13 @@
+h/k=1/8 a=3  log|direct|=-29.87  bounds [-29.86,-29.86]  log|via transform|=-29.86
+h/k=1/8 a=1  log|direct|=-29.86  bounds [-29.86,-29.86]  log|via transform|=-29.86
+h/k=0/1 a=1  log|direct|=-37.29  bounds [-59.26,-58.3]  log|via transform|=-59.26
+h/k=1/2 a=3  log|direct|=-37.32  bounds [-58.58,-57.62]  log|via transform|=-57.7
+h/k=1/2 a=3  log|direct|=-37.07  bounds [-40.96,-40.0]  log|via transform|=-40.08
+h/k=1/2 a=3  log|direct|=-36.89  bounds [-46.39,-45.43]  log|via transform|=-45.51
+h/k=7/8 a=3  log|direct|=-30.56  bounds [-30.57,-30.57]  log|via transform|=-30.57
+h/k=7/8 a=1  log|direct|=-30.56  bounds [-30.56,-30.56]  log|via transform|=-30.56
+h/k=0/1 a=1  log|direct|=-36.54  bounds [-38.63,-37.67]  log|via transform|=-38.63
+h/k=1/8 a=3  log|direct|=-23.83  bounds [-23.83,-23.83]  log|via transform|=-23.83
+h/k=1/8 a=1  log|direct|=-23.83  bounds [-23.83,-23.83]  log|via transform|=-23.83
+h/k=1/8 a=3  log|direct|=-25.2  bounds [-25.2,-25.2]  log|via transform|=-25.2
+24 cases; transform value inside bounds in all: True

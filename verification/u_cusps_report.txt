@@ -1,0 +1,30 @@
+u_cusps.py report (U0, U1 cusp exponents; units pi^2/64; run: python3 u_cusps.py search exact cusps radial)
+
+REPRESENTATIONS (x=-q, base q^4); all verified EXACTLY as power series through q^2999 vs family.pkl
+(check: f*Theta(z;q^4) == c*Lerch numerator, Fractions; perturbation test fails as expected):
+  U0 = 2 m(-q,q^4,-1)  = 2 m(-q,q^4,q^3)     [symmetry m(x,Q,z)=m(x,Q,Q^-1 x^-1 z^-1), z defined mod Q]
+  U1 = -m(-q,q^4,-q^2) = -m(-q,q^4,q)
+Numerical search over c*[m(z1)+-m(z2)], z in {+-1,+-i}*q^a, a=0..3, found nothing beyond these (only trivial 2-term combos).
+Also tested theta-quotient forms U = c m(x,Q,z0) + c[m(z1)-m(z0)] (Hickerson-Mortenson difference formula, checked
+numerically) for all 6 admissible z0=+-q^a: never strictly better than the theta-free forms at any cusp k<=400.
+
+POLES: z=q^3 form has r=0 Lerch denominator 1-(-1)=2 (constant, handled exactly). z=-q^3 is an exact pole (excluded).
+Otherwise denominators are 1+s q^e with e!=0; near a cusp |1+zeta^e e^{-et}| >= min(4t,1)/2, Lerch numerator O(t^{-3/2}):
+polynomial only. Crude bound of each single-m form = -expo(Theta(z;q^4)).
+
+CUSP TABLE k<=400 (48,674 cusps), best = min over forms, all minima achieved by theta-free forms:
+  U0: 1/8,3/8,5/8,7/8 -> 0.5 (z=q^3 form; z=-1 form gives 2 there)
+      +-i, 1, -1 -> 0 (z=-1 form; z=q^3 form gives 2 at +-i, 8 at q=1)
+      worst other: 0.125 at all h/16 (z=q^3 form). Strictly < 0.5.  No cancellation needed at +-i.
+  U1: 1/4,3/4 -> 2 (z=q form; z=-q^2 gives 8)
+      worst other: 0.2222 (=2/9) at h/12, then 0.08 at h/20. Strictly < 2.
+  Neither single form alone works at all cusps (each gives 8 at q=1 or at the dominant cusp).
+  max nu_eff observed (k<=400): 4 for Theta(s q^a;q^4) classes (lemma bound 24), 4 for J4 (unused in final forms).
+LEMMA k>400: one theta in denominator, M=4: 32 nu^2/(4k^2) <= 32*24^2/(4k^2) = 4608/k^2 < 0.0288 (< 0.5, < 2).
+
+RADIAL CROSS-CHECK (defining q-series, 90-digit Decimal complex arithmetic, t=0.01..0.0025, fit gamma/t+beta log t+c):
+  U0: 1/8 +0.5000, 3/8 +0.5000, 1/4 -0.0002, 1/16 +0.1236, 3/16 +0.1218, 1/12 -0.0013, 1/2 -0.0001, 0/1 +0.0002, 1/3 -0.0006, 1/5 0.0000
+  U1: 1/4 +2.0000, 1/12 +0.2217, 5/12 +0.2214, 1/8 -0.0012, 3/8 -0.0005, 1/20 +0.0761, 1/2 -0.0001, 0/1 -0.0002, 1/3 +0.0006, 1/16 -0.0027
+  All agree with the predicted best exponents (0.5,0.5,0,0.125,0.125,0,0,0,0,0 / 2,.2222,.2222,0,0,.08,0,0,0,0): bounds sharp here.
+  beta ~ -1/2 at dominant cusps; |U0|sqrt(t)e^{-pi^2/128t} at 1/8 -> 0.8860 (sqrt(pi)/2=0.8862).
+GAPS: crude bound and Poisson asymptotics as in the prior method (not re-proved here); lemma nu_eff<=6M only checked numerically k<=400.

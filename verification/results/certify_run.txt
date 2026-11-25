@@ -1,0 +1,6 @@
+check certified vs float at rho=e^{-pi/8}: phiU(1/4) 4.1846995893531  phiL(0) -5.839666762229783
+S0: certified N0 = 11231; margin non-monotone points beyond N0: 0; margins at N0: 0.000103, at 2e5: 131.84  (5s)
+S1: certified N0 = 10652; margin non-monotone points beyond N0: 0; margins at N0: 0.000427, at 2e5: 132.89  (3s)
+mu2: certified N0 = 976; margin non-monotone points beyond N0: 0; margins at N0: 0.000735, at 2e5: 225.13  (42s)
+U1: certified N0 = 493; margin non-monotone points beyond N0: 0; margins at N0: 0.010295, at 2e5: 308.10  (42s)
+U0: certified N0 = 5180; margin non-monotone points beyond N0: 0; margins at N0: 0.001656, at 2e5: 100.11  (39s)
